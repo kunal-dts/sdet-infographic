@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infographic: Is Testing More Important Than Coding?</title>
+    <title>Introduction to Software Testing: Your First Step into Quality Assurance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,13 +45,30 @@
             margin-bottom: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .arrow-down {
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid;
+        }
+        .arrow-right {
             width: 0;
             height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-top: 20px solid #93C5FD; /* blue-300 */
-            margin: 1rem auto;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 20px solid #93C5FD; /* blue-300 */
+            margin: 0 1rem;
+        }
+        @media (max-width: 767px) {
+            .arrow-right {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
         }
     </style>
 </head>
@@ -60,180 +77,191 @@
     <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center mb-12 md:mb-20">
-            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-4">Testing Software:</h1>
-            <h2 class="text-3xl md:text-5xl font-bold gradient-text">More Important Than Coding?</h2>
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-4">Introduction to Software Testing:</h1>
+            <h2 class="text-3xl md:text-5xl font-bold gradient-text">Your First Step into Quality Assurance</h2>
             <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-600">
-                An exploration into why robust testing is not just a phase, but the foundational pillar of reliable, successful, and innovative software development.
+                Uncover the fundamentals of software testing, why it's crucial, and how you can begin your journey in ensuring digital excellence.
             </p>
         </header>
 
         <main class="space-y-16 md:space-y-24">
 
-            <section id="cost-of-neglect" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">The Staggering Cost of Poor Quality</h3>
+            <section id="what-is-testing" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">What is Software Testing?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-lg text-gray-700 leading-relaxed">
+                        <p class="mb-4">At its core, software testing is the process of **evaluating a software application to identify any defects, errors, or missing requirements** that might prevent it from functioning as expected. Think of it as a quality check before a product goes to market.</p>
+                        <p class="mb-4">It's about ensuring the software is **reliable, usable, secure, and performs well** under various conditions. It's not just about finding bugs; it's about building confidence in the software's quality.</p>
+                        <p class="font-semibold text-blue-700">In essence: Does it work as intended? Does it meet user needs? Is it ready for the real world?</p>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
+                            <span class="text-8xl">🔎</span>
+                            <div class="absolute top-4 left-4 bg-white p-2 rounded-full shadow-md text-xl">✅</div>
+                            <div class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-md text-xl">❌</div>
+                            <div class="absolute -top-4 right-1/2 translate-x-1/2 bg-white p-2 rounded-full shadow-md text-xl">💡</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="why-test" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">Why is Testing So Important?</h3>
+                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">Testing isn't a luxury; it's a necessity that saves money, builds trust, and ensures a great user experience.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div class="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-xl shadow-md">
                         <div class="icon-box">💰</div>
-                        <span class="text-6xl font-black text-blue-600">$3.1T</span>
-                        <p class="mt-2 font-semibold text-blue-800">Annual global cost of inadequate software quality.</p>
+                        <span class="text-5xl font-black text-blue-600">Cost Savings</span>
+                        <p class="mt-2 text-blue-800">Bugs found early are 100x cheaper to fix than in production.</p>
                     </div>
                     <div class="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-xl shadow-md">
-                        <div class="icon-box">⏱️</div>
-                        <span class="text-6xl font-black text-blue-600">100x</span>
-                        <p class="mt-2 font-semibold text-blue-800">More expensive to fix a bug in production than during design.</p>
+                        <div class="icon-box">🤝</div>
+                        <span class="text-5xl font-black text-blue-600">User Trust</span>
+                        <p class="mt-2 text-blue-800">Reliable software builds loyalty; buggy software drives users away.</p>
                     </div>
                     <div class="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-xl shadow-md">
-                        <div class="icon-box">📉</div>
-                        <span class="text-6xl font-black text-blue-600">72%</span>
-                        <p class="mt-2 font-semibold text-blue-800">Of users will abandon an application after encountering just one bug.</p>
+                        <div class="icon-box">✨</div>
+                        <span class="text-5xl font-black text-blue-600">Quality Assurance</span>
+                        <p class="mt-2 text-blue-800">Ensures the software meets expectations and performs flawlessly.</p>
                     </div>
                 </div>
                 <div class="mt-10">
-                     <h4 class="text-2xl font-bold text-center mb-6 text-gray-800">The Trust Deficit: User Confidence is Fragile</h4>
+                     <h4 class="text-2xl font-bold text-center mb-6 text-gray-800">The Impact of Untested Software</h4>
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                          <div class="bg-white rounded-lg shadow-md p-6">
-                             <p class="text-center text-gray-600 mb-4">Percentage of users who lose trust in a brand after a major software failure.</p>
+                             <p class="text-center text-gray-600 mb-4">Percentage of users who abandon an app after just one bug:</p>
                              <div class="chart-container h-64 md:h-72">
-                                 <canvas id="userTrustChart"></canvas>
+                                 <canvas id="appAbandonmentChart"></canvas>
                              </div>
                          </div>
                          <div class="bg-white rounded-lg shadow-md p-6">
-                            <p class="text-center text-gray-600 mb-4">Likelihood of sharing a negative vs. positive experience.</p>
+                            <p class="text-center text-gray-600 mb-4">The high cost of fixing bugs post-release vs. early stages:</p>
                              <div class="chart-container h-64 md:h-72">
-                                 <canvas id="experienceSharingChart"></canvas>
+                                 <canvas id="bugFixCostChart"></canvas>
                              </div>
                          </div>
                      </div>
                 </div>
             </section>
-            
-            <section id="escalating-crisis">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">The Escalating Cost of a Single Defect</h3>
-                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-8">The cost to fix a bug isn't linear; it grows exponentially the later it's found in the development lifecycle. Early detection is a strategic financial imperative.</p>
-                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                    <div class="chart-container h-80 md:h-96">
-                        <canvas id="costOfDefectsChart"></canvas>
+
+            <section id="testers-mindset" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">The Tester's Mindset: Key Qualities</h3>
+                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">Becoming a great tester requires more than just technical skills; it's about a unique way of thinking.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">🤔</span>
+                        <h4 class="font-bold text-xl text-blue-800">Curiosity & Inquisitiveness</h4>
+                        <p class="text-gray-600 text-center mt-2">Always asking 'what if?' and exploring beyond the obvious.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">🔍</span>
+                        <h4 class="font-bold text-xl text-blue-800">Attention to Detail</h4>
+                        <p class="text-gray-600 text-center mt-2">Spotting subtle inconsistencies and edge cases others miss.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">🗣️</span>
+                        <h4 class="font-bold text-xl text-blue-800">Strong Communication</h4>
+                        <p class="text-gray-600 text-center mt-2">Clearly articulating findings to developers and stakeholders.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">🤯</span>
+                        <h4 class="font-bold text-xl text-blue-800">Problem-Solving</h4>
+                        <p class="text-gray-600 text-center mt-2">Analyzing issues, reproducing steps, and suggesting solutions.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">💪</span>
+                        <h4 class="font-bold text-xl text-blue-800">Persistence & Patience</h4>
+                        <p class="text-gray-600 text-center mt-2">Not giving up until the root cause is found and fixed.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-400">
+                        <span class="text-5xl mb-4">🎯</span>
+                        <h4 class="font-bold text-xl text-blue-800">User Empathy</h4>
+                        <p class="text-gray-600 text-center mt-2">Testing from the perspective of the end-user's experience.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="layered-defense">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">A Multi-Layered Defense for Quality</h3>
-                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">Quality isn't achieved by a single action, but through a systematic, layered approach where each testing type provides a unique and critical safeguard.</p>
-                <div class="space-y-8">
-                    <div class="flex items-center justify-center">
-                        <div class="w-full max-w-4xl space-y-4">
-                            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600 flex items-center space-x-4">
-                                <span class="text-4xl">🔬</span>
-                                <div>
-                                    <h4 class="font-bold text-xl text-blue-800">Unit Testing</h4>
-                                    <p class="text-gray-600 mt-1">The foundation: Validates individual components (functions, methods) in isolation to catch bugs at the source.</p>
-                                </div>
-                            </div>
-                            <div class="arrow-down"></div>
-                            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500 flex items-center space-x-4">
-                                <span class="text-4xl">🔗</span>
-                                <div>
-                                    <h4 class="font-bold text-xl text-blue-700">Integration Testing</h4>
-                                    <p class="text-gray-600 mt-1">Ensures different modules, once combined, interact and communicate correctly, preventing data flow errors.</p>
-                                </div>
-                            </div>
-                             <div class="arrow-down"></div>
-                            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-400 flex items-center space-x-4">
-                                <span class="text-4xl">🛣️</span>
-                                <div>
-                                    <h4 class="font-bold text-xl text-blue-600">End-to-End (E2E) Testing</h4>
-                                    <p class="text-gray-600 mt-1">Simulates real user scenarios from start to finish, validating the entire system flow and external integrations.</p>
-                                </div>
-                            </div>
-                             <div class="arrow-down"></div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-cyan-500 flex items-center space-x-4">
-                                    <span class="text-4xl">⚡</span>
-                                    <div>
-                                        <h4 class="font-bold text-xl text-cyan-700">Performance Testing</h4>
-                                        <p class="text-gray-600 mt-1">Checks speed, stability, and responsiveness under load to prevent crashes and ensure a smooth user experience.</p>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500 flex items-center space-x-4">
-                                    <span class="text-4xl">🔒</span>
-                                    <div>
-                                        <h4 class="font-bold text-xl text-red-700">Security Testing</h4>
-                                        <p class="text-gray-600 mt-1">Proactively identifies and closes vulnerabilities to protect sensitive data from malicious attacks.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <section id="basic-process" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">The Basic Testing Process (Simplified)</h3>
+                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">While complex, the core testing process follows a logical sequence.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-4">
+                    <div class="process-step border-blue-600">
+                        <span class="text-5xl mb-2">📝</span>
+                        <h4 class="font-bold text-xl text-blue-800">1. Plan & Analyze</h4>
+                        <p class="text-gray-600 text-sm">Understand requirements, define scope, create test strategy.</p>
                     </div>
-                </div>
-            </section>
-            
-            <section id="sdet-role">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">The Synergy of Skills: Rise of the SDET</h3>
-                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">The modern Software Development Engineer in Test (SDET) embodies the convergence of coding and testing, creating a powerful force for building quality in from the start.</p>
-                <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
-                        <div class="text-center p-6 border-2 border-dashed border-blue-300 rounded-lg flex flex-col items-center justify-center bg-blue-50">
-                            <span class="text-5xl mb-2">👨‍💻</span>
-                            <h4 class="font-bold text-xl text-blue-800">Development Skills</h4>
-                            <p class="text-sm text-gray-600">Writes & understands code</p>
-                        </div>
-                        <div class="text-5xl font-bold text-gray-400">+</div>
-                        <div class="text-center p-6 border-2 border-dashed border-cyan-300 rounded-lg flex flex-col items-center justify-center bg-cyan-50">
-                            <span class="text-5xl mb-2">🧪</span>
-                            <h4 class="font-bold text-xl text-cyan-800">Testing Mindset</h4>
-                            <p class="text-sm text-gray-600">Designs & automates tests</p>
-                        </div>
+                    <div class="arrow-right hidden md:block"></div>
+                    <div class="process-step border-blue-500">
+                        <span class="text-5xl mb-2">✍️</span>
+                        <h4 class="font-bold text-xl text-blue-800">2. Design Tests</h4>
+                        <p class="text-gray-600 text-sm">Write test cases, prepare test data.</p>
                     </div>
-                    <div class="flex justify-center my-8">
-                        <span class="text-blue-500 text-6xl font-black">🤝</span>
+                    <div class="arrow-right hidden md:block"></div>
+                    <div class="process-step border-blue-400">
+                        <span class="text-5xl mb-2">▶️</span>
+                        <h4 class="font-bold text-xl text-blue-800">3. Execute Tests</h4>
+                        <p class="text-gray-600 text-sm">Run test cases, record results, report bugs.</p>
                     </div>
-                    <div class="text-center bg-blue-600 text-white p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300">
-                         <span class="text-5xl mb-2">🏆</span>
-                        <h4 class="font-black text-3xl">Holistic Quality Engineering</h4>
-                        <p class="mt-2 text-lg">Building testable software, creating robust automation frameworks, and fostering a culture of shared quality ownership.</p>
+                    <div class="arrow-right hidden md:block"></div>
+                    <div class="process-step border-blue-300">
+                        <span class="text-5xl mb-2">📊</span>
+                        <h4 class="font-bold text-xl text-blue-800">4. Report & Retest</h4>
+                        <p class="text-gray-600 text-sm">Communicate findings, verify fixes.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="efficiency">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">Testing as an Accelerator, Not a Bottleneck</h3>
-                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-8">Effective testing frees developers from "firefighting" defects, allowing them to focus on what matters: innovation and building new features.</p>
-                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                    <div class="chart-container h-80 md:h-96">
-                        <canvas id="developerTimeChart"></canvas>
+            <section id="common-misconceptions" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">Common Misconceptions About Testing</h3>
+                <p class="max-w-2xl mx-auto text-center text-gray-600 mb-12">Let's bust some myths that often surround software testing.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                        <h4 class="font-bold text-xl text-red-700 mb-2">Myth: Testing is just finding bugs.</h4>
+                        <p class="text-gray-700">**Reality:** While bug finding is part of it, testing is primarily about **preventing defects**, ensuring quality, and validating requirements. It's about risk mitigation and building confidence.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                        <h4 class="font-bold text-xl text-red-700 mb-2">Myth: Anyone can test.</h4>
+                        <p class="text-gray-700">**Reality:** Effective testing requires a **unique mindset, critical thinking, and specific skills** (like those we just discussed!). It's a specialized discipline.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                        <h4 class="font-bold text-xl text-red-700 mb-2">Myth: Testing slows down development.</h4>
+                        <p class="text-gray-700">**Reality:** Quality issues cause delays. **Early and continuous testing accelerates delivery** by reducing costly rework and ensuring stability.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                        <h4 class="font-bold text-xl text-red-700 mb-2">Myth: Testing is done at the end.</h4>
+                        <p class="text-gray-700">**Reality:** Modern testing integrates throughout the entire development lifecycle, from **planning to post-release monitoring** ('Shift-Left' and 'Shift-Right').</p>
                     </div>
                 </div>
             </section>
 
-            <section id="future-of-qa" class="bg-gray-800 text-white rounded-2xl shadow-lg p-6 md:p-10">
-                 <h3 class="text-3xl font-bold text-center mb-8">The Future is Intelligent: AI-Powered QA</h3>
-                 <p class="max-w-2xl mx-auto text-center text-gray-300 mb-12">Artificial Intelligence is revolutionizing quality assurance, making testing smarter, faster, and more predictive than ever before.</p>
-                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="flex flex-col items-center justify-center p-6 bg-gray-700 rounded-xl shadow-md">
-                        <div class="icon-box bg-gray-600 text-cyan-400">💲</div>
-                        <span class="text-5xl font-black text-cyan-400">40%</span>
-                        <p class="mt-2 font-semibold text-gray-300">Reduction in overall testing costs reported by companies using AI solutions.</p>
+            <section id="your-first-steps" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl shadow-lg p-6 md:p-10 text-center">
+                <h3 class="text-3xl font-bold mb-8">Your First Steps into Software Testing</h3>
+                <p class="max-w-2xl mx-auto text-lg mb-8">Ready to embark on your journey into quality assurance? Here's how you can start:</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center p-6 bg-blue-700 rounded-xl shadow-md">
+                        <span class="text-5xl mb-4">📚</span>
+                        <h4 class="font-bold text-xl">Learn the Basics</h4>
+                        <p class="text-blue-200">Understand SDLC, STLC, different testing types, and basic QA concepts.</p>
                     </div>
-                    <div class="flex flex-col items-center justify-center p-6 bg-gray-700 rounded-xl shadow-md">
-                        <div class="icon-box bg-gray-600 text-cyan-400">🚀</div>
-                        <span class="text-5xl font-black text-cyan-400">30%</span>
-                        <p class="mt-2 font-semibold text-gray-300">Productivity gains achieved through AI-driven test automation and optimization.</p>
+                    <div class="flex flex-col items-center p-6 bg-blue-700 rounded-xl shadow-md">
+                        <span class="text-5xl mb-4">🛠️</span>
+                        <h4 class="font-bold text-xl">Practice Hands-On</h4>
+                        <p class="text-blue-200">Test everyday apps, find bugs, learn to write clear bug reports.</p>
                     </div>
-                    <div class="flex flex-col items-center justify-center p-6 bg-gray-700 rounded-xl shadow-md">
-                        <div class="icon-box bg-gray-600 text-cyan-400">🤖</div>
-                        <h4 class="text-xl font-bold text-cyan-400 mt-2">Self-Healing Tests</h4>
-                        <p class="mt-1 font-semibold text-gray-300">AI automatically repairs broken test scripts when the UI changes, drastically reducing maintenance.</p>
+                    <div class="flex flex-col items-center p-6 bg-blue-700 rounded-xl shadow-md">
+                        <span class="text-5xl mb-4">🌐</span>
+                        <h4 class="font-bold text-xl">Join Communities</h4>
+                        <p class="text-blue-200">Connect with other testers, ask questions, share experiences.</p>
                     </div>
-                 </div>
+                </div>
             </section>
 
         </main>
 
         <footer class="text-center mt-16 md:mt-24 pt-8 border-t border-gray-200">
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">The Interdependent Imperative</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Quality: The Heart of Great Software</h3>
             <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
-                Ultimately, the question isn't whether coding or testing is more important. The success of modern software hinges on their deep, synergistic integration. One builds the product, the other builds the trust. Both are indispensable.
+                Software testing is not just a job; it's a critical craft that ensures the software we use every day is reliable, enjoyable, and safe. Your journey into quality assurance starts now!
             </p>
         </footer>
 
@@ -326,35 +354,14 @@
                 }
             };
             
-            if (document.getElementById('userTrustChart')) {
-                new Chart(document.getElementById('userTrustChart'), {
+            if (document.getElementById('appAbandonmentChart')) {
+                new Chart(document.getElementById('appAbandonmentChart'), {
                     type: 'doughnut',
                     data: {
-                        labels: ['Lose Trust', 'Remain Neutral/Trusting'],
+                        labels: ['Abandon App (72%)', 'Continue Using (28%)'],
                         datasets: [{
-                            label: 'User Trust',
-                            data: [81, 19],
-                            backgroundColor: [PALETTE.red500, PALETTE.gray200],
-                            borderColor: PALETTE.white,
-                            borderWidth: 4
-                        }]
-                    },
-                    options: {
-                        ...defaultChartOptions,
-                        cutout: '70%',
-                        scales: { x: { display: false }, y: { display: false } }
-                    }
-                });
-            }
-
-            if (document.getElementById('experienceSharingChart')) {
-                new Chart(document.getElementById('experienceSharingChart'), {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Share Negative Experience', 'Share Positive Experience'],
-                        datasets: [{
-                            label: 'Experience Sharing',
-                            data: [95, 87],
+                            label: 'User Behavior',
+                            data: [72, 28],
                             backgroundColor: [PALETTE.red500, PALETTE.blue500],
                             borderColor: PALETTE.white,
                             borderWidth: 4
@@ -368,13 +375,13 @@
                 });
             }
 
-            if (document.getElementById('costOfDefectsChart')) {
-                new Chart(document.getElementById('costOfDefectsChart'), {
+            if (document.getElementById('bugFixCostChart')) {
+                new Chart(document.getElementById('bugFixCostChart'), {
                     type: 'bar',
                     data: {
-                        labels: ['Design Phase', 'Development Phase', 'Production/Post-Release'],
+                        labels: ['Design', 'Development', 'Production'],
                         datasets: [{
-                            label: 'Relative Cost to Fix Defect',
+                            label: 'Relative Cost to Fix Bug',
                             data: [1, 10, 100],
                             backgroundColor: [PALETTE.cyan500, PALETTE.blue500, PALETTE.red500],
                             borderColor: [PALETTE.cyan500, PALETTE.blue500, PALETTE.red500],
@@ -403,46 +410,6 @@
                             },
                             x: {
                                 ticks: { color: FONT_COLOR, font: { family: 'Inter' } },
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-            }
-
-            if (document.getElementById('developerTimeChart')) {
-                const devTimeLabels = ['Without Robust Testing', 'With Robust Testing'];
-                new Chart(document.getElementById('developerTimeChart'), {
-                    type: 'bar',
-                    data: {
-                        labels: devTimeLabels.map(processLabel),
-                        datasets: [
-                            {
-                                label: 'Firefighting Defects',
-                                data: [40, 10],
-                                backgroundColor: PALETTE.red500,
-                            },
-                            {
-                                label: 'Building New Features',
-                                data: [60, 90],
-                                backgroundColor: PALETTE.blue500,
-                            }
-                        ]
-                    },
-                    options: {
-                        ...defaultChartOptions,
-                        indexAxis: 'y',
-                        scales: {
-                            x: {
-                                stacked: true,
-                                max: 100,
-                                title: { display: true, text: 'Percentage of Sprint Time (%)', color: FONT_COLOR, font: { size: 14, weight: 'bold', family: 'Inter' } },
-                                ticks: { color: FONT_COLOR },
-                                grid: { color: GRID_COLOR }
-                            },
-                            y: {
-                                stacked: true,
-                                ticks: { color: FONT_COLOR, font: { family: 'Inter', size: 14 } },
                                 grid: { display: false }
                             }
                         }
